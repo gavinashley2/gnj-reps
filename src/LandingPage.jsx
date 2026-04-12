@@ -161,11 +161,25 @@ export default function GnJRepsLandingPage() {
             <div className="mt-8 grid gap-6 md:grid-cols-2">
               <div className="rounded-2xl bg-slate-50 p-6">
                 <div className="text-sm font-semibold text-slate-900">Website</div>
-                <div className="mt-2 text-slate-700">GnJReps.ca</div>
+                {/* Wrap the website in an anchor so it functions as a link */}
+                <div className="mt-2">
+                  <a
+                    href="https://gnjreps.ca"
+                    className="text-slate-700 hover:underline"
+                  >
+                    GnJReps.ca
+                  </a>
+                </div>
               </div>
               <div className="rounded-2xl bg-slate-50 p-6">
                 <div className="text-sm font-semibold text-slate-900">Email</div>
-                <div className="mt-2 text-slate-700">info@gnjreps.ca</div>
+                {/* Make the email a clickable mailto link so visitors can easily get more information */}
+                <a
+                  href="mailto:info@gnjreps.ca?subject=GnJ%20Reps%20Inquiry"
+                  className="mt-2 text-slate-700 hover:underline"
+                >
+                  info@gnjreps.ca
+                </a>
               </div>
             </div>
 
