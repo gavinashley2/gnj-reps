@@ -1,5 +1,6 @@
 export default function GnJRepsLandingPage() {
-  const logoSrc = "/mnt/data/a_logo_for_gnj_reps_is_displayed_in_the_digital_ve.png";
+  // Use the public logo path so it works correctly in production.
+  const logoSrc = "/gnj-logo.png";
 
   return (
     <div className="min-h-screen bg-white text-slate-900">
