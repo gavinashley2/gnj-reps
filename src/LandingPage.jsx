@@ -166,6 +166,8 @@ export default function GnJRepsLandingPage() {
                 >
                   {/* Customise the email subject line for incoming messages */}
                   <input type="hidden" name="_subject" value="GnJ Reps Inquiry" />
+                  {/* Redirect back to the custom domain after submission */}
+                  <input type="hidden" name="_next" value="https://gnjreps.ca" />
                   {/* Name field */}
                   <div>
                     <label
