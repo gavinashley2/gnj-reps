@@ -158,30 +158,75 @@ export default function GnJRepsLandingPage() {
               Tell us where you are in the process and what kind of support you need. We will help you take the next step with more clarity.
             </p>
 
-            <div className="mt-8 grid gap-6 md:grid-cols-2">
-              <div className="rounded-2xl bg-slate-50 p-6">
-                <div className="text-sm font-semibold text-slate-900">Website</div>
-                {/* Wrap the website in an anchor so it functions as a link */}
-                <div className="mt-2">
-                  <a
-                    href="https://gnjreps.ca"
-                    className="text-slate-700 hover:underline"
-                  >
-                    GnJReps.ca
-                  </a>
-                </div>
-              </div>
-              <div className="rounded-2xl bg-slate-50 p-6">
-                <div className="text-sm font-semibold text-slate-900">Email</div>
-                {/* Make the email a clickable mailto link so visitors can easily get more information */}
-                <a
-                  href="mailto:info@gnjreps.ca?subject=GnJ%20Reps%20Inquiry"
-                  className="mt-2 text-slate-700 hover:underline"
+                {/* Contact form replaces the previous website/email boxes. Submissions are sent via FormSubmit */}
+                <form
+                  action="https://formsubmit.co/info@gnjreps.ca"
+                  method="POST"
+                  className="mt-8 grid gap-6"
                 >
-                  info@gnjreps.ca
-                </a>
-              </div>
-            </div>
+                  {/* Customise the email subject line for incoming messages */}
+                  <input type="hidden" name="_subject" value="GnJ Reps Inquiry" />
+                  {/* Name field */}
+                  <div>
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-semibold text-slate-900"
+                    >
+                      Name
+                    </label>
+                    <input
+                      id="name"
+                      name="name"
+                      type="text"
+                      required
+                      className="mt-2 w-full rounded-md border border-slate-300 p-3 text-slate-900 placeholder-slate-400 focus:border-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-400"
+                      placeholder="Your Name"
+                    />
+                  </div>
+                  {/* Email field */}
+                  <div>
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-semibold text-slate-900"
+                    >
+                      Email
+                    </label>
+                    <input
+                      id="email"
+                      name="email"
+                      type="email"
+                      required
+                      className="mt-2 w-full rounded-md border border-slate-300 p-3 text-slate-900 placeholder-slate-400 focus:border-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-400"
+                      placeholder="you@example.com"
+                    />
+                  </div>
+                  {/* Message field */}
+                  <div className="md:col-span-2">
+                    <label
+                      htmlFor="message"
+                      className="block text-sm font-semibold text-slate-900"
+                    >
+                      Message
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      required
+                      rows={4}
+                      className="mt-2 w-full rounded-md border border-slate-300 p-3 text-slate-900 placeholder-slate-400 focus:border-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-400"
+                      placeholder="How can we help you?"
+                    />
+                  </div>
+                  {/* Submit button */}
+                  <div className="md:col-span-2">
+                    <button
+                      type="submit"
+                      className="inline-flex items-center justify-center rounded-2xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white shadow-md transition hover:opacity-90"
+                    >
+                      Submit
+                    </button>
+                  </div>
+                </form>
 
             <div className="mt-8 rounded-2xl border border-amber-200 bg-amber-50 p-5 text-sm leading-6 text-amber-900">
               Important: GnJ Reps provides support for self-represented individuals. It is not a law firm and does not provide legal representation.
